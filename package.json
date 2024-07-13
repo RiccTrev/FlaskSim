@@ -1,0 +1,8 @@
+{
+  "name": "python-rsxmys",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "flask": "^0.2.10"
+  }
+}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Computation History{% endblock %}
+
+{% block content %}
+    <h1>Computation History</h1>
+    <table>
+        <tr>
+            <th>Timestamp</th>
+            <th>Filename</th>
+            <th>Status</th>
+        </tr>
+        {% for entry in history %}
+        <tr>
+            <td>{{ entry.timestamp }}</td>
+            <td>{{ entry.filename }}</td>
+            <td>{{ entry.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
