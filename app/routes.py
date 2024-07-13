@@ -24,6 +24,11 @@ def upload_file():
             message_class = "danger"
             return render_template('upload.html', message=message, message_class=message_class)
         
+        if not allowed_file(file.filename):
+            message = "File extension not allowed"
+            message_class = "danger"
+            return render_template('upload.html', message=message, message_class=message_class)
+        
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             upload_folder = current_app.config['UPLOAD_FOLDER']

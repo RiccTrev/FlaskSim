@@ -3,8 +3,10 @@ import random
 from flask import current_app
 
 def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in current_app.config['ALLOWED_EXTENSIONS']
+    if '.' in filename and filename.rsplit('.', 1)[1].lower() in current_app.config['ALLOWED_EXTENSIONS']:
+        return True
+    else:
+        return False
 
 def process_file(filename):
     # Randomly return 1 or 0
