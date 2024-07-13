@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}History{% endblock %}
+
+{% block content %}
+  <div class="container mt-4">
+    <h1 class="display-4">History</h1>
+    <p class="lead">Here is the list of all uploaded and processed files.</p>
+    <hr class="my-4">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Timestamp</th>
+          <th scope="col">Filename</th>
+          <th scope="col">Status</th>
+          <th scope="col">Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for invocation in invocations %}
+        <tr>
+          <td>{{ invocation.timestamp }}</td>
+          <td>{{ invocation.filename }}</td>
+          <td>{{ invocation.status }}</td>
+          <td>{{ invocation.result }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
