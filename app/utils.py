@@ -9,7 +9,7 @@ def allowed_file(filename):
 def process_file(filename):
     # Randomly return 1 or 0
     result = random.choice([0, 1])
-    result = 1
+
     if result == 0:
         raise ValueError("Random processing error occurred")
     
