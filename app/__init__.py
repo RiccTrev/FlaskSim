@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from .config import Config
+from app.config import Config  # Changed to use absolute import
 
 db = SQLAlchemy()
 
@@ -10,7 +10,7 @@ def create_app(config_class=Config):
 
     db.init_app(app)
 
-    from .routes import main as main_blueprint
+    from app.routes import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
     with app.app_context():
